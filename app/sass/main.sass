@@ -1,0 +1,325 @@
+@import "_vars"
+@import "_fonts"
+@import "_libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $color_accent
+	color: #fff
+html
+	font-family: $font_default
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $font_default
+	overflow-x: hidden
+	color: $color_text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+h1, h2, h3, h4, h5, h6
+	text-transform: uppercase
+	line-height: 1.4
+
+
+
+
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $color_accent
+	padding: 15px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	box-shadow: 0 0 1em rgba(0,0,0,0.1)
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($color_accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($color_accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($color_accent, 5%)
+		&::after
+			opacity: .32
+
+
+
+
+
+
+
+.header
+	background-size: cover
+	background-position: center
+	height: 100vh
+	min-height: 700px
+	position: relative
+	&::after
+		display: block
+		content: ''
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		background-color: rgba(0,0,0,.4)
+		//background-image: repeating-linear-gradient(0deg,rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 1px,transparent 1px,transparent 2px)
+		//background-image: url(../img/filter.png)
+		background-repeat: repeat
+		z-index: 0
+
+	.top-line
+		padding-top: 40px
+		position: absolute
+		width: 100%
+		z-index: 300
+
+	.phone
+		display: inline-block
+		line-height: 36px
+		position: absolute
+		right: 100px
+		font-family: 'firasans'
+		color: #fff
+		white-space: nowrap
+		font-size: 22px
+		.call-me
+			display: inline-block
+			font-size: 1rem
+			float: right
+			a
+				text-decoration: underline
+				color: rgba(255,255,255,.5)
+				transition: all 300ms ease
+				&:hover
+					color: $color_accent
+		.base64-icon
+			width: auto
+			height: 18px
+			margin-right: 4px
+			display: inline-block
+			position: relative
+			top: -2px
+			//opacity: 0.5
+		i
+			display: none
+			font-size: 20px
+			color: rgba(255,255,255,.5)
+			margin-right: 8px
+
+	.hamburger
+		position: absolute
+		z-index: 1000
+		top: 32px
+		right: 0
+	.hamburger-inner,
+	.hamburger-inner::after,
+	.hamburger-inner::before
+		width: 2rem
+		background-color: #fff
+		height: 2px
+
+.site-logo
+	text-decoration: none
+	margin-left: 2rem
+	// color: $color_accent !important
+	color: #fff
+	font-family: $font_logo
+	font-weight: normal
+	font-size: 2em
+	line-height: 1
+	letter-spacing: 1px
+	//font-weight: bold
+	//text-shadow: 1px 1px 0.5em rgba(0,0,0,.2)
+	&:hover
+		color: #fff
+	span
+		//color: $color_accent
+		display: inline-block
+		line-height: 1
+		//padding: 0.25em 0.25em 0.1em 0.25em
+		//background: $color_accent
+		//border-radius: 2px
+
+.mm-menu
+	.site-logo span
+		color: $color_accent
+	.mm-navbar
+		.site-logo
+			margin-left: 0
+		height: 90px
+	.mm-panels
+		.mm-listview
+			padding: 0 3rem 0 2rem
+			margin-top: 30px !important
+			li
+				&.active, &:hover, &.mm-selected
+					a
+						background: #000 !important
+						color: $color_accent
+				a
+					transition: all 200ms ease
+					font-size: 16px
+					line-height: 2.25
+					i 
+						margin-right: 1em
+					&::before
+	//font-family: $font_default!important
+
+
+.section
+	background-size: cover
+	background-position: center
+
+
+.header-flex
+	color: #ffffff
+	z-index: 2
+	display: flex
+	height: 100%
+	position: relative
+	top: 0
+.welcome-header.my-style
+	font-weight: 600
+	font-size: 2.5rem
+	white-space: nowrap
+.welcome-header
+	font-weight: 100
+	font-size: 3.5rem
+	white-space: nowrap
+	border-bottom: 1px solid #fff
+	padding: 1rem 0 1.5rem 0
+	line-height: 1.25
+.flex-center
+	text-shadow: 1px 1px 1em rgba(0,0,0,0.4)
+	margin: auto
+
+	.composition
+		text-align: center
+		justify-content: align-center
+		.welcome-cities
+			margin-top: 2rem
+			i
+				color: rgba(255,255,255,0.5)
+				margin: 0 0.5em
+				font-size: 1rem
+			strong
+				text-transform: uppercase
+				font-size: calc(1rem)
+		.welcome p:first-child
+			text-transform: uppercase
+			white-space: nowrap
+			margin: 0
+			display: flex
+			align-items: center
+			&>span
+				margin: 0 1em
+			&::before, &::after
+				content: ''
+				height: 1px
+				width: 100%
+				background-color: #fff
+				display: inline-block
+		p
+			margin-top: 1.5rem
+		.button
+			margin-top: 1rem
+
+.socail-panel
+	position: absolute
+	right: 0
+	top: 0
+	padding: 0 20px
+	display: flex
+	align-items: center
+	height: 100%
+	border-left: 1px solid rgba(#fff, 0.25)
+	z-index: 4
+.socila-icons-group
+	margin: auto
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+		a
+			font-size: calc(1rem+2px)
+			width: 2.25rem
+			height: 2.25rem
+			display: block
+			border-radius: 50%
+			color: #fff
+			text-align: center
+			background: rgba(#fff, 0.25)
+			line-height: 2.25rem
+			margin-bottom: 0.5rem
+			transition: all 300ms ease
+			&:hover
+				background-color: rgba(#fff, 0.5)
+
+.bottom-line
+	.adress
+		white-space: nowrap
+		p
+			display: inline-block
+			margin-left: 4em
+			&:first-child
+				margin-left: 0
+			i
+				color: rgba(#fff, 0.5)
+				margin-right: 0.5em
+	position: absolute
+	z-index: 10000
+	bottom: 0
+	left: 0
+	width: 100%
+	padding: 20px 0 8px 0
+	border-top: 1px solid rgba(#fff, 0.25)
+	color: #fff	
+
+
+@import "media" // Always at the end
